@@ -1,0 +1,12 @@
+#app-background{
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-image: url('../../../public/background.jpg');
+    height: 100vh;
+    width: 100vw; 
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    z-index: -10;
+}

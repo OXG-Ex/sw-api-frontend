@@ -8,6 +8,9 @@ import { AppReducer } from './Context/AppReducer';
 import { DefaultContextValue, AppContextType } from './Context/DefaultContextValue';
 import { Action } from './models/Actions';
 import { AppContextState } from './models/AppContextState';
+import { Background } from './components/background/Background';
+
+import './App.scss';
 
 const App = () => {
     const [state, changeState] = useReducer<React.Reducer<AppContextType, Action>>(AppReducer, DefaultContextValue);
@@ -23,6 +26,7 @@ const App = () => {
             <BrowserRouter >
                 <MainRouter />
             </BrowserRouter>
+            <Background></Background>
         </AppContext.Provider>
 
     );
