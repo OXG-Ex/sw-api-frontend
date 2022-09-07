@@ -8,7 +8,7 @@ import { Root } from "../root/Root";
 
 export const MainRouter: React.FC = () => {
     return (
-        <Fragment>
+        <Fragment >
             <TopMenu />
             <Routes>
                 <Route path={RouterPaths.Root} element={<Root />} />

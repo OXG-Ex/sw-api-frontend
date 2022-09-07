@@ -1,3 +1,4 @@
+import { CssBaseline } from '@mui/material';
 import React, { useReducer } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
@@ -18,6 +19,7 @@ const App = () => {
 
     return (
         <AppContext.Provider value={ContextState} >
+            <CssBaseline enableColorScheme />
             <BrowserRouter >
                 <MainRouter />
             </BrowserRouter>
