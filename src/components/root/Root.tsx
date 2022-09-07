@@ -1,4 +1,10 @@
+import { useContext } from "react";
+import { AppContext } from "../../Context/AppContext";
 
 export const Root: React.FC = () => {
-    return <div>Root</div>;
+    const { state, changeState } = useContext(AppContext);
+
+    return <div>
+        {state.theme}
+    </div>;
 };

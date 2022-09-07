@@ -8,10 +8,9 @@ import Typography from '@mui/material/Typography';
 
 export const TopMenu = () => {
 
-
     return (
         <Box sx={{ flexGrow: 1 }}>
-            <AppBar position="static">
+            <AppBar position="static" >
                 <Toolbar>
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         {"Star Wars API"}
