@@ -15,15 +15,12 @@ export const SearchBlock: React.FC = () => {
     const [searchValue, setSearchValue] = useState("");
 
     const searchCallback = useCallback(() => {
-        //changeState({ type: ActionType.SET_IS_DATA_LOADING, payload: true });
+        changeState({ type: ActionType.SET_IS_DATA_LOADING, payload: true });
         ApiServiceInstance.search(searchValue)
             .then(x => {
-                console.log(x.data);
                 changeState({ type: ActionType.UPDATE_FIND_LIST, payload: x.data.results });
-            });
-        //
-        // .finally(() => changeState({ type: ActionType.SET_IS_DATA_LOADING, payload: false }));
-
+            })
+            .finally(() => changeState({ type: ActionType.SET_IS_DATA_LOADING, payload: false }));
     }, [changeState, searchValue]);
 
     return <Paper className="search-block-container" elevation={10}>

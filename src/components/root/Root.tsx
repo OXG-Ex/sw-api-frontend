@@ -1,11 +1,11 @@
-import { Fade } from "react-awesome-reveal";
+import { Fade } from "react-reveal";
 
 import { SearchBlock } from "../SearchBlock/SearchBlock";
 
 
 export const Root: React.FC = () => {
 
-    return <Fade direction="left">
+    return <Fade left >
         <SearchBlock />
     </Fade>;
 };
