@@ -25,5 +25,4 @@ export class ApiService implements IApiService {
     getCharcter(characterId: string | number): Promise<AxiosResponse<Character>> {
         return this._axiosInstance.get(`people/${characterId}`);
     }
-
 }
