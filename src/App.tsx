@@ -1,5 +1,5 @@
-import { CssBaseline } from '@mui/material';
-import React, { useReducer } from 'react';
+import { CssBaseline, ThemeProvider } from '@mui/material';
+import React, { useMemo, useReducer } from 'react';
 import { BrowserRouter } from 'react-router-dom';
 
 import { MainRouter } from './components/router/MainRouter';
@@ -9,11 +9,13 @@ import { DefaultContextValue, AppContextType } from './Context/DefaultContextVal
 import { Action } from './models/Actions';
 import { AppContextState } from './models/AppContextState';
 import { Background } from './components/background/Background';
-
-import './App.scss';
+import { Theme } from './models/Theme';
+import { LightTheme, DarkTheme } from './models/ThemesModels';
 
 const App = () => {
     const [state, changeState] = useReducer<React.Reducer<AppContextType, Action>>(AppReducer, DefaultContextValue);
+
+    const currentThemeOptions = useMemo(() => state.theme === Theme.Light ? LightTheme : DarkTheme, [state.theme]);
 
     const ContextState: AppContextState = {
         state,
@@ -22,11 +24,13 @@ const App = () => {
 
     return (
         <AppContext.Provider value={ContextState} >
-            <CssBaseline enableColorScheme />
-            <BrowserRouter >
-                <MainRouter />
-            </BrowserRouter>
-            <Background></Background>
+            <ThemeProvider theme={currentThemeOptions}>
+                <CssBaseline enableColorScheme />
+                <BrowserRouter >
+                    <MainRouter />
+                </BrowserRouter>
+                <Background></Background>
+            </ThemeProvider>
         </AppContext.Provider>
 
     );

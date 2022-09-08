@@ -1,11 +1,9 @@
-import { useContext } from "react";
-import { AppContext } from "../../Context/AppContext";
+import { SearchBlock } from "../SearchBlock/SearchBlock";
 
 
 export const Root: React.FC = () => {
-    const { state } = useContext(AppContext);
 
-    return <div >
-        {state.theme}
-    </div>;
+    return <>
+        <SearchBlock />
+    </>;
 };
