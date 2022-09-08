@@ -3,9 +3,9 @@ import { Theme } from "../models/Theme";
 
 export const DefaultContextValue = {
     theme: Theme.Dark,
-    cachedCharacters: new Set() as Set<Character>,
     viewedCharacters: new Set() as Set<Character>,
-    findList: [] as Character[]
+    findList: null as Character[],
+    isDataLoading: false
 };
 
 export type AppContextType = typeof DefaultContextValue;
