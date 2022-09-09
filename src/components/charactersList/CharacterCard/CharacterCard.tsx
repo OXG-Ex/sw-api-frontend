@@ -1,7 +1,10 @@
 import { Card, CardContent, Typography, CardActions, Button } from "@mui/material";
 import { Stack } from "@mui/system";
+import { useCallback } from "react";
+import { useNavigate } from "react-router-dom";
 
 import { Character } from "../../../models/Character";
+import RouterPaths from "../../router/RoutePath";
 
 
 export type CharacterCardProps = {
@@ -9,6 +12,11 @@ export type CharacterCardProps = {
 };
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ character }: CharacterCardProps) => {
+    const navigate = useNavigate();
+
+    const openCharacterDetails = useCallback(() => {
+        navigate(RouterPaths.Character.replace(":id", character.url.split("/")[5]));
+    }, [character.url, navigate]);
 
     return <Card sx={{ maxWidth: "550px" }} key={character.url} className="character-card">
         <CardContent>
@@ -31,7 +39,7 @@ export const CharacterCard: React.FC<CharacterCardProps> = ({ character }: Chara
             </Stack>
         </CardContent>
         <CardActions>
-            <Button size="small">Learn More</Button>
+            <Button size="small" onClick={openCharacterDetails}>Open details</Button>
         </CardActions>
     </Card>;
 };
