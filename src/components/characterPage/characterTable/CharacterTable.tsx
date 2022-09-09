@@ -1,7 +1,8 @@
-import { DataGrid, GridColDef } from '@mui/x-data-grid';
+import { Card, Typography } from "@mui/material";
 import React from "react";
 
 import { Character } from "../../../models/Character";
+import { CharacterField } from './CharacterField';
 
 
 export type CharacterTableProps = {
@@ -13,23 +14,20 @@ export const CharacterTable: React.FC<CharacterTableProps> = ({ character }: Cha
     if (!character) {
         return <></>;
     }
-    const columns: GridColDef[] = Object.keys(character).map(characterKey => {
-        return {
-            field: characterKey,
-            headerName: characterKey,
-            valueGetter: () => `${character[characterKey]}`,
-        };
+
+    const fieldset = Object.entries(character).map((entry, index) => {
+        const [key, value] = entry;
+        if (key === "name") {
+            return <></>;
+        }
+        return <CharacterField keyName={key} value={value} />;
     });
 
-    const rows = [{ id: 444, ...character }];
+    return <Card variant="outlined" sx={{ maxWidth: "550px" }}>
+        <Typography variant="h5" component="div">
+            {character.name}
+        </Typography>
+        {fieldset}
 
-    return <div style={{ height: 400, width: '100%' }}>
-        <DataGrid
-            rows={rows}
-            columns={columns}
-            pageSize={5}
-            rowsPerPageOptions={[5]}
-            checkboxSelection
-        />
-    </div>;
+    </Card>;
 };
