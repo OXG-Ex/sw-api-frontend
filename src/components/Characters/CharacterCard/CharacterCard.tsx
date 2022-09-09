@@ -1,7 +1,8 @@
-import { Card, CardMedia, CardContent, Typography, CardActions, Button } from "@mui/material";
+import { Card, CardContent, Typography, CardActions, Button } from "@mui/material";
 import { Stack } from "@mui/system";
-import { Fade } from "react-reveal";
+
 import { Character } from "../../../models/Character";
+
 
 export type CharacterCardProps = {
     character: Character;
@@ -9,7 +10,7 @@ export type CharacterCardProps = {
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ character }: CharacterCardProps) => {
 
-    return <Card sx={{ maxWidth: 345 }}>
+    return <Card sx={{ maxWidth: "550px" }} key={character.url} className="character-card">
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">
                 {character.name}

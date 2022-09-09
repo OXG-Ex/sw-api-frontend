@@ -10,7 +10,9 @@ import { Action } from './models/Actions';
 import { AppContextState } from './models/AppContextState';
 import { Background } from './components/background/Background';
 import { Theme } from './models/Theme';
-import { LightTheme, DarkTheme } from './models/ThemesModels';
+import { LightTheme, DarkTheme } from './models/ThemeModels';
+
+import "./App.scss";
 
 const App = () => {
     const [state, changeState] = useReducer<React.Reducer<AppContextType, Action>>(AppReducer, DefaultContextValue);

@@ -17,6 +17,9 @@ export const AppReducer = (state: AppContextType, action: Action): AppContextTyp
         case ActionType.SET_IS_DATA_LOADING: {
             return { ...state, isDataLoading: action.payload };
         }
+        case ActionType.CLEAR_FIND_LIST: {
+            return { ...state, findList: [] };
+        }
         default: throw new Error('Unexpected action');
     }
 };

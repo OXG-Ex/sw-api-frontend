@@ -14,7 +14,7 @@ export const SearchField: React.FC<SearchFieldProps> = ({ onChangeCallback }) =>
     }, [onChangeCallback]);
 
     return <TextField id="search-character-field"
-        label="Поиск персонажа"
+        label="Search character"
         variant="filled"
         size="medium"
         sx={{ color: theme.palette.primary.main, boxShadow: `0px 0px 7px 4px ${theme.palette.primary.main}`, borderRadius: "4px" }}

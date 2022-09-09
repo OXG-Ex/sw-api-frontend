@@ -1,6 +1,7 @@
 import { Paper, CircularProgress } from "@mui/material";
 import React from "react";
 import { Fade } from "react-reveal";
+
 import { AppContext } from "../../Context/AppContext";
 
 export const Preloader: React.FC = () => {
