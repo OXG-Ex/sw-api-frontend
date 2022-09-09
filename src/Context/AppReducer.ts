@@ -20,6 +20,9 @@ export const AppReducer = (state: AppContextType, action: Action): AppContextTyp
         case ActionType.CLEAR_FIND_LIST: {
             return { ...state, findList: [] };
         }
+        case ActionType.SET_CURRENT_CHARACTER: {
+            return { ...state, currentCharacter: action.payload };
+        }
         default: throw new Error('Unexpected action');
     }
 };

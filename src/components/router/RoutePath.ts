@@ -1,6 +1,6 @@
 export enum RouterPaths {
     Root = "/root",
-    Character = "/character"
+    Character = "/character/:id"
 }
 
 export default RouterPaths;

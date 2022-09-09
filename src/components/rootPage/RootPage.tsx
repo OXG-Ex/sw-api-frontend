@@ -4,12 +4,12 @@ import { Fade } from "react-reveal";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
 
 import { AppContext } from "../../Context/AppContext";
-import { CharactersList } from "../Characters/CharactersList";
+import { CharactersList } from "../charactersList/CharactersList";
 import { SearchBlock } from "../SearchBlock/SearchBlock";
 import { ActionType } from "../../models/Actions";
 
 
-export const Root: React.FC = () => {
+export const RootPage: React.FC = () => {
     const { state, changeState } = React.useContext(AppContext);
 
     const showSearchBlock = useMemo(() => !state.findList || state.findList.length === 0, [state.findList]);

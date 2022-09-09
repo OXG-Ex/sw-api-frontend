@@ -14,5 +14,5 @@ export type Character = {
     starships: string[],//Url
     created: string, //Date
     edited: string, // Date
-    url: string; //Url
+    url: string; //Url (using as ID)
 };

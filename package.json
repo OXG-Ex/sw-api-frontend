@@ -9,6 +9,7 @@
     "@fontsource/roboto": "^4.5.8",
     "@mui/icons-material": "^5.10.2",
     "@mui/material": "^5.10.2",
+    "@mui/x-data-grid": "^5.17.2",
     "@pmmmwh/react-refresh-webpack-plugin": "^0.5.3",
     "@reduxjs/toolkit": "^1.8.5",
     "@svgr/webpack": "^5.5.0",

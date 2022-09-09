@@ -12,6 +12,7 @@ const useSearch = () => {
         ApiServiceInstance.search(searchValue)
             .then(x => {
                 changeState({ type: ActionType.UPDATE_FIND_LIST, payload: x.data.results });
+                console.log(x.data);
             })
             .catch(e =>
                 console.error(e)
