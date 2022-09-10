@@ -5,6 +5,7 @@ import RouterPaths from "./RoutePath";
 import { TopMenu } from "../topMenu/TopMenu";
 import { CharacterPage } from "../characterPage/CharacterPage";
 import { RootPage } from "../rootPage/RootPage";
+import { Preloader } from "../preloader/Preloader";
 
 
 
@@ -12,6 +13,7 @@ export const MainRouter: React.FC = () => {
     return (
         <Fragment >
             <TopMenu />
+            <Preloader />
             <Routes>
                 <Route path={RouterPaths.Root} element={<RootPage />} />
                 <Route path={RouterPaths.Character} element={<CharacterPage />} />

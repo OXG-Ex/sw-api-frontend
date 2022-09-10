@@ -1,0 +1,18 @@
+@import "../../../common/mixins.scss";
+
+.character-data{
+    @include data-card;
+
+    .fields-scroll-container{
+        @include scroll-container;
+        height:750px;
+        .character-field{
+            flex: 1;
+            height: 60px;
+            margin-right: 5px;
+
+        }
+    }
+}
+
+

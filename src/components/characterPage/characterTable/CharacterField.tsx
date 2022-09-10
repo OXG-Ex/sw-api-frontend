@@ -8,9 +8,9 @@ export type FieldProps = {
 };
 
 export const CharacterField: React.FC<FieldProps> = ({ keyName, value }) => {
-    const parsedValue = Array.isArray(value) ? value.toString().replaceAll(",", ", ") : value;
+    const parsedValue = Array.isArray(value) ? `[ ${value.toString().replaceAll(",", ",  ")} ]` : value;
 
-    return <CardContent>
+    return <CardContent className="character-field">
         <Stack direction={"row"} gap={"10px"}>
             <Typography variant="body2" >
                 {`${keyName}: `}

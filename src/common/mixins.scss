@@ -1,0 +1,34 @@
+$cardWidth:550px !global;
+
+@mixin data-card {
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+    position: fixed;
+    bottom: 10px;
+    left: calc(50% - #{$cardWidth} / 2);
+    align-items: center;
+    padding: 10px;
+    max-height: 85vh;
+}
+
+@mixin scroll-container {
+    width: $cardWidth;
+    overflow-y: auto;
+    
+    &::-webkit-scrollbar {
+        width: 7px;
+        background-color: transparent;
+    }
+
+    &::-webkit-scrollbar-thumb {
+        border-radius: 5px;
+        background-color: #545d6eaa; 
+    }
+
+    &::-webkit-scrollbar-thumb:hover {
+        border-radius: 5px;
+        background-color: #545d6ecc; 
+    }
+}
+
