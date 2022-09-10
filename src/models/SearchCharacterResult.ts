@@ -6,3 +6,10 @@ export type SearchCharacterResult = {
     previous: string, //url
     results: Character[];
 };
+
+export const emptySearchData: SearchCharacterResult = {
+    count: 0,
+    next: "",
+    previous: "",
+    results: []
+};

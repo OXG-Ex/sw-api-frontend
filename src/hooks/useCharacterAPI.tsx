@@ -5,7 +5,7 @@ import { ActionType } from "../models/Actions";
 
 const useCharacterAPI = (id: string) => {
     const { state, changeState } = React.useContext(AppContext);
-    const cachedCharacter = useMemo(() => state.findList.find(x => x.url.split("/")[5] === id), [id, state.findList]);
+    const cachedCharacter = useMemo(() => state.searchData.results.find(x => x.url.split("/")[5] === id), [id, state.searchData.results]);
 
     const updateCharacter = useCallback(() => {
         if (cachedCharacter) {

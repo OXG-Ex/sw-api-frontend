@@ -4,7 +4,7 @@ import { Character } from "../models/Character";
 import { SearchCharacterResult } from "../models/SearchCharacterResult";
 
 export interface IApiService {
-    search(query: string): Promise<AxiosResponse<SearchCharacterResult>>;
+    search(query: string, page: number): Promise<AxiosResponse<SearchCharacterResult>>;
     getCharacter(characterId: number | string): Promise<AxiosResponse<Character>>;
 }
 
@@ -18,8 +18,8 @@ export class ApiService implements IApiService {
         this._axiosInstance = axios.create(config);
     }
 
-    search(query: string): Promise<AxiosResponse<SearchCharacterResult>> {
-        return this._axiosInstance.get(`people/?search=${query}`);
+    search(query: string, page: number): Promise<AxiosResponse<SearchCharacterResult>> {
+        return this._axiosInstance.get(`people/?search=${query}&page=${page}`);
     }
 
     getCharacter(characterId: string | number): Promise<AxiosResponse<Character>> {

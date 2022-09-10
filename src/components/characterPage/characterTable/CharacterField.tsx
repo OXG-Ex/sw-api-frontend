@@ -12,11 +12,11 @@ export const CharacterField: React.FC<FieldProps> = ({ keyName, value }) => {
 
     return <CardContent>
         <Stack direction={"row"} gap={"10px"}>
-            <Typography gutterBottom variant="body2" >
+            <Typography variant="body2" >
                 {`${keyName}: `}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-                {parsedValue}
+                {parsedValue || "N/A"}
             </Typography>
         </Stack>
     </CardContent>;

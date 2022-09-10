@@ -12,9 +12,9 @@ import { ActionType } from "../../models/Actions";
 export const RootPage: React.FC = () => {
     const { state, changeState } = React.useContext(AppContext);
 
-    const showSearchBlock = useMemo(() => !state.findList || state.findList.length === 0, [state.findList]);
+    const showSearchBlock = useMemo(() => !state.searchData.results || state.searchData.results.length === 0, [state.searchData.results]);
     const clearSearchResults = useCallback(() => {
-        changeState({ type: ActionType.CLEAR_FIND_LIST, payload: null });
+        changeState({ type: ActionType.CLEAR_SEARCH_DATA, payload: null });
     }, [changeState]);
 
     return <div style={{ position: "relative" }}>
