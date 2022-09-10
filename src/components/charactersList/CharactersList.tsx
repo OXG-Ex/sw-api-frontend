@@ -31,8 +31,7 @@ export const CharactersList: React.FC = () => {
     }, [loadPage]);
 
 
-    return <Fade up when={characterCards && characterCards.length > 0}>
-
+    return <Fade up when={characterCards && characterCards.length > 0} mountOnEnter>
         <div className="characters-list" style={{ boxShadow: `0px 0px 7px 4px ${theme.palette.primary.main}` }}>
             {showPagination && <Pagination count={pageCount} onChange={onPageChange} />}
             <div className="characters-scroll-container">

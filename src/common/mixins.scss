@@ -14,7 +14,6 @@ $cardMaxHeight: 85vh;
 }
 
 @mixin scroll-container {
-    width: $cardWidth;
     overflow-y: auto;
     
     &::-webkit-scrollbar {
@@ -33,3 +32,14 @@ $cardMaxHeight: 85vh;
     }
 }
 
+@mixin left-floating-button {
+    position:fixed;
+    left: 25px;
+
+    &.first{
+        top: 50px;
+    }
+    &.second{
+        top: 110px;
+    }
+}

@@ -5,6 +5,7 @@
 
     .fields-scroll-container{
         @include scroll-container;
+        width: $cardWidth;
         max-height: calc(#{$cardMaxHeight} - 55px);
 
         .character-field{

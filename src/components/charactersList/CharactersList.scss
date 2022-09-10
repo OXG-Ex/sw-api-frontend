@@ -4,8 +4,9 @@
     @include data-card;
 
     .characters-scroll-container{
-
+        width: $cardWidth;
         @include scroll-container;
+        
         .character-card{
             z-index: 95;
             flex: 1;

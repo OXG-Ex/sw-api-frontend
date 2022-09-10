@@ -1,0 +1,8 @@
+@import "../../common/mixins.scss";
+
+.character-page-container{
+    .left-button{
+        @include left-floating-button;
+    }
+    
+}

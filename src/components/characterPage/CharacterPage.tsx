@@ -8,28 +8,29 @@ import { AppContext } from "../../Context/AppContext";
 import { CharacterTable } from "./characterTable/CharacterTable";
 import useCharacterAPI from "../../hooks/useCharacterAPI";
 import RouterPaths from "../router/RoutePath";
-import { ActionType } from "../../models/Actions";
+import useCharacterMethods from "../../hooks/useCharacterMethods";
 
 
 export const CharacterPage: React.FC = () => {
-    const { state, changeState } = React.useContext(AppContext);
+    const { state } = React.useContext(AppContext);
     const { id } = useParams();
     const { updateCharacter } = useCharacterAPI(id);
     const navigate = useNavigate();
     const character = useMemo(() => state.currentCharacter, [state.currentCharacter]);
+    const { addToViewed } = useCharacterMethods(character);
 
     const toHome = useCallback(() => {
-        changeState({ type: ActionType.ADD_VIEWED_CHARACTER, payload: character });
+        addToViewed();
         navigate(RouterPaths.Root);
-    }, [changeState, character, navigate]);
+    }, [addToViewed, navigate]);
 
     useEffect(() => {
         updateCharacter();
     }, [updateCharacter]);
 
-    return <div style={{ position: "relative" }}>
-        <Fade left >
-            <Fab size="small" color="info" aria-label="search" onClick={toHome}>
+    return <div className="character-page-container">
+        <Fade left appear>
+            <Fab size="small" color="info" aria-label="search" onClick={toHome} className="left-button first">
                 <HomeIcon />
             </Fab>
         </Fade>
