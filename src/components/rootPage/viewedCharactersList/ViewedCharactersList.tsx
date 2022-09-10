@@ -1,4 +1,4 @@
-import { Card, CardContent, IconButton, List, Stack, Typography, useTheme } from "@mui/material";
+import { Card, CardContent, IconButton, List, Stack, Tooltip, Typography, useTheme } from "@mui/material";
 import React, { useMemo } from "react";
 import { Fade } from "react-reveal";
 import CloseIcon from '@mui/icons-material/Close';
@@ -27,9 +27,11 @@ export const ViewedCharactersList: React.FC<ViewedCharactersListProps> = ({ show
                         <Typography variant="h6" component="div" sx={{ padding: "0px 10px" }}>
                             Viewed characters
                         </Typography>
-                        <IconButton onClick={hideCallback}>
-                            <CloseIcon />
-                        </IconButton>
+                        <Tooltip title="Hide viewed characters">
+                            <IconButton onClick={hideCallback}>
+                                <CloseIcon />
+                            </IconButton>
+                        </Tooltip>
                     </Stack>
                     <List>
                         {viewedCharacters}

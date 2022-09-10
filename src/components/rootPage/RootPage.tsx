@@ -1,4 +1,4 @@
-import { Fab } from "@mui/material";
+import { Fab, Tooltip } from "@mui/material";
 import React, { useCallback, useMemo, useState } from "react";
 import { Fade } from "react-reveal";
 import ArrowBackIcon from '@mui/icons-material/ArrowBack';
@@ -29,16 +29,18 @@ export const RootPage: React.FC = () => {
             <SearchBlock />
         </Fade>
         <Fade left when={!showSearchBlock} mountOnEnter appear>
-            <Fab size="small" color="info" aria-label="search" onClick={clearSearchResults} className="left-button first">
-                <ArrowBackIcon />
-            </Fab>
+            <Tooltip title="Back to search">
+                <Fab size="small" color="info" aria-label="search" onClick={clearSearchResults} className="left-button first">
+                    <ArrowBackIcon />
+                </Fab>
+            </Tooltip>
         </Fade>
         <Fade left when={state.viewedCharacters.length > 0} mountOnEnter appear>
-            <div>
+            <Tooltip title="Show / Hide viewed characters">
                 <Fab size="small" color="info" aria-label="search" onClick={toggleViewedCharactersList} className="left-button second">
                     <RemoveRedEyeOutlinedIcon />
                 </Fab>
-            </div>
+            </Tooltip>
         </Fade>
         <CharactersList />
         <ViewedCharactersList show={showViewedCharacters} hideCallback={toggleViewedCharactersList} />

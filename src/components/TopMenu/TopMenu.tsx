@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import { AppContext } from '../../Context/AppContext';
 import { ActionType } from '../../models/Actions';
 import { Theme } from '../../models/Theme';
-import { Fab } from '@mui/material';
+import { Fab, Tooltip } from '@mui/material';
 import BoltIcon from '@mui/icons-material/Bolt';
 
 export const TopMenu = () => {
@@ -23,9 +23,11 @@ export const TopMenu = () => {
                     <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
                         {"Star Wars API"}
                     </Typography>
-                    <Fab size="small" color="info" aria-label="Change theme" onClick={changeTheme} sx={{ height: "30px", width: "30px", minHeight: "30px" }}>
-                        <BoltIcon />
-                    </Fab>
+                    <Tooltip title="Go to the other side of the force">
+                        <Fab size="small" color="info" aria-label="Change theme" onClick={changeTheme} sx={{ height: "30px", width: "30px", minHeight: "30px" }}>
+                            <BoltIcon />
+                        </Fab>
+                    </Tooltip>
                 </Toolbar>
             </AppBar>
         </Box>
