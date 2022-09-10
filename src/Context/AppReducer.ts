@@ -7,7 +7,7 @@ import { AppContextType } from "./DefaultContextValue";
 export const AppReducer = (state: AppContextType, action: Action): AppContextType => {
     switch (action.type) {
         case ActionType.ADD_VIEWED_CHARACTER: {
-            return { ...state, viewedCharacters: new Set([...state.viewedCharacters, ...action.payload]) };
+            return { ...state, viewedCharacters: state.viewedCharacters.find(x => x.url === action.payload.url) ? state.viewedCharacters : [...state.viewedCharacters, action.payload] };
         }
         case ActionType.UPDATE_SEARCH_DATA: {
             return { ...state, searchData: action.payload };

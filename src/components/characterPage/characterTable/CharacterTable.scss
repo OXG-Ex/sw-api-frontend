@@ -5,12 +5,11 @@
 
     .fields-scroll-container{
         @include scroll-container;
-        height:750px;
+        max-height: calc(#{$cardMaxHeight} - 55px);
+
         .character-field{
             flex: 1;
-            height: 60px;
             margin-right: 5px;
-
         }
     }
 }

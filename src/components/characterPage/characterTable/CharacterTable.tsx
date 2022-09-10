@@ -1,4 +1,4 @@
-import { Card, Typography, useTheme } from "@mui/material";
+import { Card, CardContent, Stack, Typography, useTheme } from "@mui/material";
 import React from "react";
 
 import { Character } from "../../../models/Character";
@@ -30,7 +30,11 @@ export const CharacterTable: React.FC<CharacterTableProps> = ({ character }: Cha
         </Typography>
         <Card variant="elevation" >
             <div className="fields-scroll-container">
-                {fieldset}
+                <CardContent className="fields-scroll-content">
+                    <Stack direction={"column"} gap={"20px"} className="character-fields">
+                        {fieldset}
+                    </Stack>
+                </CardContent>
             </div>
         </Card>
     </div>;

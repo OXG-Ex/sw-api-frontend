@@ -1,9 +1,9 @@
-import { useCallback } from "react";
+import React, { useCallback } from "react";
+import { AxiosResponse } from "axios";
+
 import { AppContext } from "../Context/AppContext";
-import React from "react";
 import { ActionType } from "../models/Actions";
 import { ApiServiceInstance } from "../api/ApiServiceInstance";
-import { AxiosResponse } from "axios";
 import { SearchCharacterResult } from "../models/SearchCharacterResult";
 
 
@@ -40,4 +40,5 @@ const useSearch = () => {
 
     return { search, loadPage };
 };
+
 export default useSearch;

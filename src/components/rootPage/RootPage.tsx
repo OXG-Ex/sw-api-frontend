@@ -7,6 +7,7 @@ import { AppContext } from "../../Context/AppContext";
 import { CharactersList } from "../charactersList/CharactersList";
 import { SearchBlock } from "../SearchBlock/SearchBlock";
 import { ActionType } from "../../models/Actions";
+import { ViewedCharactersList } from "./viewedCharactersList/ViewedCharactersList";
 
 
 export const RootPage: React.FC = () => {
@@ -18,7 +19,7 @@ export const RootPage: React.FC = () => {
     }, [changeState]);
 
     return <div style={{ position: "relative" }}>
-        <Fade left wait={2000} when={showSearchBlock && !state.isDataLoading}>
+        <Fade left wait={2000} when={showSearchBlock && !state.isDataLoading} >
             <SearchBlock />
         </Fade>
         <Fade left when={!showSearchBlock}>
@@ -27,5 +28,6 @@ export const RootPage: React.FC = () => {
             </Fab>
         </Fade>
         <CharactersList />
+        <ViewedCharactersList />
     </div>;
 };

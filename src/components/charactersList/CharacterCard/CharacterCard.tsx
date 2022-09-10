@@ -1,10 +1,8 @@
 import { Card, CardContent, Typography, CardActions, Button } from "@mui/material";
 import { Stack } from "@mui/system";
-import { useCallback } from "react";
-import { useNavigate } from "react-router-dom";
 
+import useCharacterMethods from "../../../hooks/useCharacterMethods";
 import { Character } from "../../../models/Character";
-import RouterPaths from "../../router/RoutePath";
 
 
 export type CharacterCardProps = {
@@ -12,11 +10,8 @@ export type CharacterCardProps = {
 };
 
 export const CharacterCard: React.FC<CharacterCardProps> = ({ character }: CharacterCardProps) => {
-    const navigate = useNavigate();
+    const { openCharacterDetails } = useCharacterMethods(character);
 
-    const openCharacterDetails = useCallback(() => {
-        navigate(RouterPaths.Character.replace(":id", character.url.split("/")[5]));
-    }, [character.url, navigate]);
 
     return <Card sx={{ maxWidth: "550px" }} key={character.url} className="character-card">
         <CardContent>

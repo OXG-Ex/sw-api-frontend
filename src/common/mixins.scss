@@ -1,4 +1,5 @@
-$cardWidth:550px !global;
+$cardWidth:550px ;
+$cardMaxHeight: 85vh;
 
 @mixin data-card {
     display: flex;
@@ -9,7 +10,7 @@ $cardWidth:550px !global;
     left: calc(50% - #{$cardWidth} / 2);
     align-items: center;
     padding: 10px;
-    max-height: 85vh;
+    max-height: $cardMaxHeight;
 }
 
 @mixin scroll-container {

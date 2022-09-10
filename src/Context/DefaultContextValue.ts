@@ -4,7 +4,7 @@ import { Theme } from "../models/Theme";
 
 export const DefaultContextValue = {
     theme: Theme.Dark,
-    viewedCharacters: new Set() as Set<Character>,
+    viewedCharacters: [] as Character[],
     searchData: emptySearchData,
     isDataLoading: false,
     currentSearchValue: "",
