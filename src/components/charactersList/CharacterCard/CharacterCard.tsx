@@ -12,7 +12,6 @@ export type CharacterCardProps = {
 export const CharacterCard: React.FC<CharacterCardProps> = ({ character }: CharacterCardProps) => {
     const { openCharacterDetails } = useCharacterMethods(character);
 
-
     return <Card sx={{ maxWidth: "550px" }} key={character.url} className="character-card">
         <CardContent>
             <Typography gutterBottom variant="h5" component="div">

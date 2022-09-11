@@ -2,6 +2,7 @@ import { Backdrop, Link, Typography } from "@mui/material";
 import { Stack } from "@mui/system";
 import { useCallback } from "react";
 import { useNavigate } from "react-router-dom";
+
 import RouterPaths from "../router/RoutePath";
 
 export const NotFoundPage: React.FC = () => {

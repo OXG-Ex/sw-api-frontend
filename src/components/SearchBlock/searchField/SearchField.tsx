@@ -1,7 +1,6 @@
 import { TextField, useTheme } from "@mui/material";
 import React, { useCallback } from "react";
 
-
 export type SearchFieldProps = {
     onChangeCallback: (newValue: string) => void;
 };

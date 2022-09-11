@@ -22,7 +22,7 @@ export const CharacterTable: React.FC<CharacterTableProps> = ({ character }: Cha
         if (key === "name") {
             return <React.Fragment key={"NameField"}></React.Fragment>;;
         }
-        return <CharacterField keyName={key} value={value} />;
+        return <CharacterField keyName={key} value={value} key={key} />;
     });
 
     return <Fade up mountOnEnter appear>
@@ -33,7 +33,7 @@ export const CharacterTable: React.FC<CharacterTableProps> = ({ character }: Cha
             <Card variant="elevation" >
                 <div className="fields-scroll-container">
                     <CardContent className="fields-scroll-content">
-                        <Stack direction={"column"} gap={"20px"} className="character-fields">
+                        <Stack direction={"column"} gap={"20px"} className="character-fields" key={"someKey"}>
                             {fieldset}
                         </Stack>
                     </CardContent>

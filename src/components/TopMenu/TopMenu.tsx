@@ -3,11 +3,12 @@ import AppBar from '@mui/material/AppBar';
 import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
+import { Fab, Tooltip } from '@mui/material';
+import BoltIcon from '@mui/icons-material/Bolt';
+
 import { AppContext } from '../../Context/AppContext';
 import { ActionType } from '../../models/Actions';
 import { Theme } from '../../models/Theme';
-import { Fab, Tooltip } from '@mui/material';
-import BoltIcon from '@mui/icons-material/Bolt';
 
 export const TopMenu = () => {
     const { state, dispatch } = React.useContext(AppContext);

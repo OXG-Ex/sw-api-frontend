@@ -10,11 +10,11 @@ export type CharacterFieldProps = {
 export const CharacterField: React.FC<CharacterFieldProps> = ({ keyName, value }) => {
     const parsedValue = Array.isArray(value) ? `[ ${value.toString().replaceAll(",", ",  ")} ]` : value;
 
-    return <Stack direction={"row"} gap={"10px"} >
+    return <Stack direction={"row"} gap={"10px"}>
         <Typography variant="body2" >
             {`${keyName}: `}
         </Typography>
-        <Typography variant="body2" color="text.secondary">
+        <Typography variant="body2" color="text.secondary" >
             {parsedValue || "N/A"}
         </Typography>
     </Stack>;

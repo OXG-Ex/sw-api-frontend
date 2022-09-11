@@ -12,7 +12,6 @@ import { FloatingButton } from "../floatingButton/FloatingButton";
 
 import "./RootPage.scss";
 
-
 export const RootPage: React.FC = () => {
     const { state, dispatch } = React.useContext(AppContext);
     const [showViewedCharacters, setShowViewedCharacters] = useState(false);
