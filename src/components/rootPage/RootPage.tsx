@@ -16,7 +16,7 @@ export const RootPage: React.FC = () => {
     const { state, dispatch } = React.useContext(AppContext);
     const [showViewedCharacters, setShowViewedCharacters] = useState(false);
 
-    const showSearchBlock = useMemo(() => !state.searchData.results || state.searchData.results.length === 0, [state.searchData.results]);
+    const showSearchBlock = useMemo(() => !state.searchData.results || !state.searchData.results.length, [state.searchData.results]);
     const showViewedButton = useMemo(() => state.viewedCharacters.length > 0, [state.viewedCharacters.length]);
 
     const toggleViewedCharactersList = useCallback(() => setShowViewedCharacters(!showViewedCharacters), [showViewedCharacters]);
