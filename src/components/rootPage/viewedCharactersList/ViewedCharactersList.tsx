@@ -17,7 +17,7 @@ export const ViewedCharactersList: React.FC<ViewedCharactersListProps> = ({ show
     const { state } = React.useContext(AppContext);
     const theme = useTheme();
 
-    const viewedCharacters = useMemo(() => state.viewedCharacters.map(x => <ViewedCharacterItem character={x} />), [state.viewedCharacters]);
+    const viewedCharacters = useMemo(() => state.viewedCharacters.map(x => <ViewedCharacterItem character={x} key={x.url} />), [state.viewedCharacters]);
 
     return <Fade left when={show} mountOnEnter>
         <div className="viewed-characters-container" style={{ boxShadow: `0px 0px 7px 4px ${theme.palette.primary.main}` }}>

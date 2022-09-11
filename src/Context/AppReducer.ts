@@ -27,6 +27,12 @@ export const AppReducer = (state: AppContextType, action: Action): AppContextTyp
         case ActionType.SET_CURRENT_SEARCH_VALUE: {
             return { ...state, currentSearchValue: action.payload };
         }
+        case ActionType.SET_CURRENT_NOTIFICATION: {
+            return { ...state, currentNotification: { ...state.currentNotification, ...action.payload } };
+        }
+        case ActionType.SET_NOTIFICATION_VISIBILITY: {
+            return { ...state, currentNotification: { ...state.currentNotification, visible: action.payload } };
+        }
         default: throw new Error('Unexpected action');
     }
 };

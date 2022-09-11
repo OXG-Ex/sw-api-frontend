@@ -1,4 +1,5 @@
 import { Character } from "../models/Character";
+import { Notification, NotificationType } from "../models/Notification";
 import { emptySearchData } from "../models/SearchCharacterResult";
 import { Theme } from "../models/Theme";
 
@@ -8,7 +9,8 @@ export const DefaultContextValue = {
     searchData: emptySearchData,
     isDataLoading: false,
     currentSearchValue: "",
-    currentCharacter: null as Character
+    currentCharacter: null as Character,
+    currentNotification: { messageText: "", messageColor: NotificationType.Success } as Notification
 };
 
 export type AppContextType = typeof DefaultContextValue;

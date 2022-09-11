@@ -4,5 +4,5 @@ import { Action } from "./Actions";
 
 export type AppContextState = {
     state: AppContextType;
-    changeState: Dispatch<Action>;
+    dispatch: Dispatch<Action>;
 };

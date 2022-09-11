@@ -10,11 +10,11 @@ import { Fab, Tooltip } from '@mui/material';
 import BoltIcon from '@mui/icons-material/Bolt';
 
 export const TopMenu = () => {
-    const { state, changeState } = React.useContext(AppContext);
+    const { state, dispatch } = React.useContext(AppContext);
 
     const changeTheme = React.useCallback(() => {
-        changeState({ type: ActionType.CHANGE_THEME, payload: state.theme === Theme.Dark ? Theme.Light : Theme.Dark });
-    }, [changeState, state.theme]);
+        dispatch({ type: ActionType.CHANGE_THEME, payload: state.theme === Theme.Dark ? Theme.Light : Theme.Dark });
+    }, [dispatch, state.theme]);
 
     return (
         <Box sx={{ flexGrow: 1 }}>

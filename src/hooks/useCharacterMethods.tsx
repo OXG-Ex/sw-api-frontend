@@ -8,11 +8,11 @@ import { Character } from "../models/Character";
 
 const useCharacterMethods = (character: Character) => {
     const navigate = useNavigate();
-    const { changeState } = React.useContext(AppContext);
+    const { dispatch } = React.useContext(AppContext);
 
     const getId = useCallback(() => character && character.url.split("/")[5], [character]);
 
-    const addToViewed = useCallback(() => character && changeState({ type: ActionType.ADD_VIEWED_CHARACTER, payload: character }), [changeState, character]);
+    const addToViewed = useCallback(() => character && dispatch({ type: ActionType.ADD_VIEWED_CHARACTER, payload: character }), [dispatch, character]);
 
     const openCharacterDetails = useCallback(() => {
         if (!character) {

@@ -6,7 +6,8 @@ import { TopMenu } from "../topMenu/TopMenu";
 import { CharacterPage } from "../characterPage/CharacterPage";
 import { RootPage } from "../rootPage/RootPage";
 import { Preloader } from "../preloader/Preloader";
-
+import { Notifications } from "../notifications/Notifications";
+import { NotFoundPage } from "../errors/NotFoundPage";
 
 
 export const MainRouter: React.FC = () => {
@@ -14,11 +15,12 @@ export const MainRouter: React.FC = () => {
         <Fragment >
             <TopMenu />
             <Preloader />
+            <Notifications />
             <Routes>
                 <Route path={RouterPaths.Root} element={<RootPage />} />
                 <Route path={RouterPaths.Character} element={<CharacterPage />} />
                 <Route path="/" element={<Navigate to={RouterPaths.Root} />} />
-                <Route path="*" element={<div>Wrong URL</div>} />
+                <Route path="*" element={<NotFoundPage />} />
             </Routes>
         </Fragment>
     );

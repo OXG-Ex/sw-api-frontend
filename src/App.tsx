@@ -15,13 +15,13 @@ import { LightTheme, DarkTheme } from './models/ThemeModels';
 import "./App.scss";
 
 const App = () => {
-    const [state, changeState] = useReducer<React.Reducer<AppContextType, Action>>(AppReducer, DefaultContextValue);
+    const [state, dispatch] = useReducer<React.Reducer<AppContextType, Action>>(AppReducer, DefaultContextValue);
 
     const currentThemeOptions = useMemo(() => state.theme === Theme.Light ? LightTheme : DarkTheme, [state.theme]);
 
     const ContextState: AppContextState = {
         state,
-        changeState
+        dispatch
     };
 
     return (
